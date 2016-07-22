@@ -2,9 +2,18 @@
 that can take any 2 of these values and calculates the third.
 
 E.g. ee101({v:6, r:2}) -> {i:3}
+
+By Emily and Katherine
 '''
 
 from __future__ import division
+
+
+def ee101_keywords(v=None, i=None, r=None):
+    if v is None:
+        return i * r
+    else:
+        return v / (i or r)
 
 
 def ee101_simple(d):
@@ -24,13 +33,6 @@ def ee101_absurd(d):
         present = [key for key in d.keys() if key is not 'v'][0]
         absent = (possibilities.find(key) + 1) % 2
         return {absent: d['v'] / d[present]}
-
-
-def ee101_keywords(v=None, i=None, r=None):
-    if v is None:
-        return i * r
-    else:
-        return v / (i or r)
 
 
 if __name__ == '__main__':

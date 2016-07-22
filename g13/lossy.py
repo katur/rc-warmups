@@ -2,6 +2,8 @@
 prints out the contents *without* any vowels.
 
 E.g. lossy("taleoftwocities.txt") -> twsthbstftms,tws...
+
+By Emily and Katherine
 '''
 
 VOWELS = 'AEIOUaeiou'
