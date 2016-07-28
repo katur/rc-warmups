@@ -26,6 +26,8 @@ DIAMOND = 'diamond'
 
 def art_write(s, number):
     out = ''
+
+    # Subtract 1 from number so that the middle is 0-indexed
     middle = (number - 1) / 2.0
 
     for row in range(number):
@@ -48,6 +50,8 @@ def process_diamond_spot(row, column, middle):
     distance_from_middle_column = abs(column - middle)
     summed_distance = distance_from_middle_row + distance_from_middle_column
 
+    # I'm not totally sure why I have to add 0.5... something about wanting to
+    # round up in the odd cases
     if summed_distance <= (middle + 0.5):
         return 'x '
     else:
