@@ -20,21 +20,20 @@ x x x x
   x x
 '''
 
-import math
-
 SQUARE = 'square'
 DIAMOND = 'diamond'
 
 
 def art_write(s, number):
     out = ''
+    middle = (number - 1) / 2.0
 
     for row in range(number):
         for column in range(number):
             if s == SQUARE:
                 out += process_square_spot()
             elif s == DIAMOND:
-                out += process_diamond_spot(number, row, column)
+                out += process_diamond_spot(row, column, middle)
         out += '\n'
 
     print out
@@ -44,14 +43,12 @@ def process_square_spot():
     return 'x '
 
 
-def process_diamond_spot(number, row, column):
-    middle_index = (number - 1) / 2.0
-
-    distance_from_middle_row = abs(row - middle_index)
-    distance_from_middle_column = abs(column - middle_index)
+def process_diamond_spot(row, column, middle):
+    distance_from_middle_row = abs(row - middle)
+    distance_from_middle_column = abs(column - middle)
     summed_distance = distance_from_middle_row + distance_from_middle_column
 
-    if summed_distance <= (number / 2.0):
+    if summed_distance <= (middle + 0.5):
         return 'x '
     else:
         return '  '
@@ -59,6 +56,8 @@ def process_diamond_spot(number, row, column):
 
 if __name__ == '__main__':
     art_write(SQUARE, 3)
+    art_write(SQUARE, 8)
+    art_write(SQUARE, 15)
     art_write(DIAMOND, 3)
     art_write(DIAMOND, 4)
     art_write(DIAMOND, 5)
