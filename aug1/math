@@ -1,0 +1,39 @@
+#!/usr/local/bin/python
+'''Write a command line tool that takes an operator (+ or x) and any number
+of results, and prints out the result.
+
+E.g.
+$ math 'x' 5 2 9
+16
+
+$math 'x' 1 2
+2
+
+$math '+'
+0
+'''
+
+from operator import add, mul
+
+OP_TO_FX = {
+    '+': add,
+    'x': mul,
+}
+
+
+def prompt_for_input():
+    tokens = raw_input('$ ').split()
+    op = OP_TO_FX[tokens[0]]
+    nums = [int(token) for token in tokens[1:]]
+    if not nums:
+        nums = [0]
+    return reduce(op, nums)
+
+
+def math():
+    while True:
+        print prompt_for_input()
+
+
+if __name__ == '__main__':
+    math()
