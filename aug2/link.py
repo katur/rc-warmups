@@ -9,7 +9,15 @@ link("race", miriamwebster)
 
 import string
 
-LETTERS = string.lowercase
+
+# Decorator to try a function for all letters
+def try_all_letters(f, *args):
+    def inner(*args):
+        results = set()
+        for letter in string.lowercase:
+            results |= f(*args, letter=letter)
+        return results
+    return inner
 
 
 def link(base, dictionary):
@@ -18,16 +26,6 @@ def link(base, dictionary):
     results |= find_adds(base, dictionary)
     results |= find_subs(base, dictionary)
     return results
-
-
-# Decorator to try a function for all letters
-def try_all_letters(f, *args):
-    def inner(*args):
-        results = set()
-        for letter in LETTERS:
-            results |= f(*args, letter=letter)
-        return results
-    return inner
 
 
 def find_removes(base, dictionary):
