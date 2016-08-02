@@ -20,25 +20,31 @@ def link(base, dictionary):
     return results
 
 
+# Decorator to try a function for all letters
+def try_all_letters(f, *args):
+    def inner(*args):
+        results = set()
+        for letter in LETTERS:
+            results |= f(*args, letter=letter)
+        return results
+    return inner
+
+
 def find_removes(base, dictionary):
     return {remove(base, i) for i in range(len(base))
             if remove(base, i) in dictionary}
 
 
-def find_adds(base, dictionary):
-    results = set()
-    for letter in LETTERS:
-        results |= {add(base, i, letter) for i in range(len(base))
-                    if add(base, i, letter) in dictionary}
-    return results
+@try_all_letters
+def find_adds(base, dictionary, letter):
+    return {add(base, i, letter) for i in range(len(base))
+            if add(base, i, letter) in dictionary}
 
 
-def find_subs(base, dictionary):
-    results = set()
-    for letter in LETTERS:
-        results |= {sub(base, i, letter) for i in range(len(base))
-                    if sub(base, i, letter) in dictionary}
-    return results
+@try_all_letters
+def find_subs(base, dictionary, letter):
+    return {sub(base, i, letter) for i in range(len(base))
+            if sub(base, i, letter) in dictionary}
 
 
 def remove(base, i):
