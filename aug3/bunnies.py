@@ -21,7 +21,7 @@ def bunnies(starting, litter_size):
     for i in range(20):
         adults += adolescents
         adolescents = babies
-        babies = adults * 3
+        babies = adults * litter_size
         print babies + adolescents + adults
 
 
