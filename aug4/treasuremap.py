@@ -26,8 +26,9 @@ def search_outgoing(path, goal):
         return path
 
     for room in ROOMS[current]:
+        # Skip cycles
         if room in path:
-            continue  # Avoid cycles
+            continue
 
         solution = search_outgoing(path + [room], goal)
         if solution:
