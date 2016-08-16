@@ -18,14 +18,8 @@ tasty(2, {
 '''
 
 
-# key = value[1] / value[0]
-# i.e.
-# key * value[0] = value[1]
-
-# read as 3 't' per 'T'
-
 CONVERT = {
-    't': (3, 'T'),
+    't': (3, 'T'),  # read as 3 't' per 'T'
     'T': (16, 'c'),
     'c': (4, 'q'),
 }
