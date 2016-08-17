@@ -19,7 +19,7 @@ tasty(2, {
 
 
 CONVERT_UP = {
-    't': (3, 'T'),  # read as 3 't' per 'T'
+    't': (3, 'T'),  # Read as 3 't' per 'T'
     'T': (16, 'c'),
     'c': (4, 'q'),
 }
@@ -37,7 +37,7 @@ def tasty(n, recipe):
 
 
 def convert(amt, unit):
-    # To take care of 'q', the largest unit, not being in the lookup table
+    # To take care of the largest unit not being convertible to a larger unit
     if unit not in CONVERT_UP:
         return (amt, unit)
 
