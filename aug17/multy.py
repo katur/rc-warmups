@@ -11,7 +11,12 @@ TEN = 10
 
 def multy(a, b):
     # Get b rounded down to the nearest tens-place
-    place = pow(TEN, len(str(b)) - 1)
+    power = len(str(b)) - 1
+
+    if str(b)[0] == '-':
+        power -= 1
+
+    place = pow(TEN, power)
 
     while place >= 1:
         prefix = b // place
