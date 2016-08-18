@@ -1,6 +1,8 @@
 '''Write a function that takes a list of letters and returns a
 hash/dict/association list/whatever of characters with the number of times they
 appear in the input
+
+E.g.
 abbacdeb
 a-2  b-3 ...
 '''
