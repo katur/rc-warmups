@@ -4,6 +4,7 @@ number of seconds between the two times.
 
 E.g. [20, 60, 24], '01:05:15', '01:06:05' -> 10
 '''
+
 import operator
 
 
