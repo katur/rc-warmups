@@ -9,6 +9,7 @@ def bingo(n, l):
     seen = set()
 
     for item in l:
+        print item
         if item <= n:
             seen.add(item)
 
