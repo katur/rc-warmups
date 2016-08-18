@@ -8,7 +8,17 @@ plusone("call me at 3.555-2020") -> "call me at 4.555-2019"
 
 import re
 
-NUMBER = '-?\d+\.?\d*'
+# This one requires a digit before the decimal point. Downside: .36 is
+# captured as the integer 36 (so becomes .37)
+# NUMBER = '-?(\d+\.?\d*)'
+
+# This one requires a digit before or after the point. Downside: 36., at the
+# end of a sentence, is perceived as a float (so becomes 37.0)
+# NUMBER = '-?(\d+\.?\d*)|(\d*\.?\d+)'
+
+# This one separates floats (with optional preceding digits) from integers
+# (which are not followed by a decimal point).
+NUMBER = '-?(\d*\.?\d+)|(\d+[^\.\d])'
 
 
 def increment_replace(matchobj):
@@ -17,7 +27,7 @@ def increment_replace(matchobj):
     try:
         num = int(s)
     except ValueError:
-        num = float(s)
+        num = float(s)  # allow trailing 0s to be lost
 
     num += 1
     return str(num)
@@ -30,3 +40,5 @@ def plusone(s):
 if __name__ == '__main__':
     print plusone('1+15=16')
     print plusone('call me at 3.555-2020')
+    print plusone('My favorite number is 36.')
+    print plusone('My next favorite number is .36')
