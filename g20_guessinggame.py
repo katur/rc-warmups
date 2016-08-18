@@ -4,6 +4,7 @@ Have a human guess the number, responding higher/lower for incorrect guesses.
 
 Bonus points: Keep a high-score table with names that persists between runs.
 '''
+
 import random
 
 
