@@ -1,5 +1,6 @@
 '''Write a function that takes an array of 5 numbers, and returns a string
-representing their value as a poker hand.'''
+representing their value as a poker hand.
+'''
 
 from collections import OrderedDict
 
