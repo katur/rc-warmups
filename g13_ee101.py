@@ -3,7 +3,7 @@ that can take any 2 of these values and calculates the third.
 
 E.g. ee101({v:6, r:2}) -> {i:3}
 
-By Emily and Katherine
+solution by Emily and Katherine
 '''
 
 from __future__ import division
@@ -32,13 +32,15 @@ def ee101_absurd(d):
         possibilities = 'ir'
         present = [key for key in d.keys() if key is not 'v'][0]
         absent = (possibilities.find(key) + 1) % 2
-        return {absent: d['v'] / d[present]}
+        return {possibilities[absent]: d['v'] / d[present]}
 
 
 if __name__ == '__main__':
     print ee101_simple({'v': 6, 'r': 2})
     print ee101_simple({'r': 3, 'i': 4})
+
     print ee101_absurd({'v': 6, 'r': 2})
     print ee101_absurd({'r': 3, 'i': 4})
+
     print ee101_keywords(v=6, r=2)
     print ee101_keywords(r=3, i=4)
