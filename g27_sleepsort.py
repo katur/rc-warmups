@@ -22,4 +22,5 @@ def sleepsort(l):
 
 if __name__ == '__main__':
     sleepsort([3, 1, 4])
+    print 'new sort'
     sleepsort([3, 1, 4, 6, 28, 5, 0])
