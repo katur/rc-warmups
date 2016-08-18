@@ -20,7 +20,7 @@ def tens(all_numbers):
         if sum_numbers == TEN:
             yield numbers
 
-        if sum_numbers >= TEN or end > len(all_numbers):
+        if sum_numbers > TEN or end >= len(all_numbers):
             start += 1
             end = start + 1
         else:
