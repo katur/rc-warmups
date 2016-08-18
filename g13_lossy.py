@@ -16,4 +16,4 @@ def lossy(filename):
 
 
 if __name__ == '__main__':
-    lossy('taleoftwocities.txt')
+    lossy('g13_taleoftwocities.txt')

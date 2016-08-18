@@ -26,4 +26,4 @@ def little_git(src):
 
 
 if __name__ == '__main__':
-    little_git('foo')
+    little_git('g26_foo')

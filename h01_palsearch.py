@@ -99,6 +99,6 @@ def palsearch_slow(substring, filename):
 
 
 if __name__ == '__main__':
-    print palsearch('o', 'test.txt')
-    print palsearch('hot', 'test.txt')
-    print palsearch_slow('o', 'test.txt')
+    print palsearch('o', 'h01_test.txt')
+    print palsearch('hot', 'h01_test.txt')
+    print palsearch_slow('o', 'h01_test.txt')

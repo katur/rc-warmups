@@ -19,4 +19,4 @@ def lc2(filename):
 
 
 if __name__ == '__main__':
-    lc2('annakarenina.txt')
+    lc2('h03_annakarenina.txt')
