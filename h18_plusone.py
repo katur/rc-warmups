@@ -30,7 +30,12 @@ def increment_replace(matchobj):
         num = float(s)  # allow trailing 0s to be lost
 
     num += 1
-    return str(num)
+
+    if '.' in s:
+        padding = len(s.split('.')[1])
+        return '{:.{padding}f}'.format(num, padding=padding)
+    else:
+        return str(num)
 
 
 def plusone(s):
@@ -41,4 +46,7 @@ if __name__ == '__main__':
     print plusone('1+15=16')
     print plusone('call me at 3.555-2020')
     print plusone('My favorite number is 36.')
-    print plusone('My next favorite number is .36')
+    print plusone('My favorite float is .36')
+    print plusone('My favorite negative number is -36.')
+    print plusone('My favorite negative float is -.36')
+    print plusone('That costs $5.00?!')
