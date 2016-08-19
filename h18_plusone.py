@@ -31,9 +31,9 @@ def increment_replace(matchobj):
 
     num += 1
 
-    # Add back trailing 0s (might be nice for $5.00)
+    # Add back trailing 0s (might be nice for things like $5.00)
     # Do not bother with preceding 0s, since unclear how to handle case of
-    # moving up by a tens-place; maybe this could be done with zfill.
+    # moving up by a tens-place.
 
     if '.' in s:
         padding = len(s.split('.')[1])
