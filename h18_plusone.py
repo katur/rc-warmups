@@ -27,15 +27,19 @@ def increment_replace(matchobj):
     try:
         num = int(s)
     except ValueError:
-        num = float(s)  # allow trailing 0s to be lost
+        num = float(s)
 
     num += 1
+
+    # Add back trailing 0s (might be nice for $5.00)
+    # Do not bother with preceding 0s, since unclear how to handle case of
+    # moving up by a tens-place; maybe this could be done with zfill.
 
     if '.' in s:
         padding = len(s.split('.')[1])
         return '{:.{padding}f}'.format(num, padding=padding)
-    else:
-        return str(num)
+
+    return str(num)
 
 
 def plusone(s):
