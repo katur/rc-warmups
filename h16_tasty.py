@@ -54,5 +54,13 @@ if __name__ == '__main__':
     print tasty(2, {
         'mayonnaise': (2, 'c'),
         'brown sugar': (8, 'T'),
-        'cayenne': (2, 't')}
-    )
+        'cayenne': (2, 't')
+    })
+
+    # Switchel for BYOSong party
+    print tasty(12, {
+        'cider vinegar': (2, 'T'),
+        'maple syrup': (4, 't'),
+        'grated ginger': (1, 't'),
+        'water': (1, 'c'),
+    })
