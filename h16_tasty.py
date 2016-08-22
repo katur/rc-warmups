@@ -58,6 +58,8 @@ if __name__ == '__main__':
     })
 
     # Switchel for BYOSong party
+    # Refrigerate for at least 4 hours, and optionally strain out the ginger,
+    # before serving. Optionally mix with 1.5oz gin per serving.
     print tasty(12, {
         'cider vinegar': (2, 'T'),
         'maple syrup': (4, 't'),
