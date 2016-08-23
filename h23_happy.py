@@ -8,7 +8,7 @@ If this process ends with 1, the number is happy; if this process gets stuck in
 a loop, it's not.
 
 E.g.
-happy(14) -> True (19?)
+happy(19) -> True
 happy(11) -> False
 '''
 
