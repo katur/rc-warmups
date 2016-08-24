@@ -8,7 +8,19 @@ swap(['a', 'b', 'c'], [(0, 2), (1, 2)]) -> ['c', 'a', 'b']
 
 
 def swap(l1, l2):
-    pass
+    res = list(l1)  # Copy to not mess with original list l1
+
+    for pair in l2:
+        swap_positions(res, *pair)
+
+    return res
+
+
+def swap_positions(l, i1, i2):
+    """Swap the elements at indices i1 and i2 in list l."""
+    temp = l[i1]
+    l[i1] = l[i2]
+    l[i2] = temp
 
 
 if __name__ == '__main__':
