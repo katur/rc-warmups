@@ -15,10 +15,15 @@ foo.txt
     am excited!
 '''
 
+import re
+
 
 def splitby(filename, l):
-    pass
+    pattern = '|'.join('\s' + i + '\s' for i in l)
+
+    with open(filename, 'r') as f:
+        return re.split(pattern, f.read())
 
 
 if __name__ == '__main__':
-    print splitby('foo.txt', ['am', 'is'])
+    print splitby('h25_foo.txt', ['am', 'is'])
