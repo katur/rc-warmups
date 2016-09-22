@@ -5,7 +5,7 @@ intersperse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) => [1, 4, 7, 2, 5, 8, 3, 6, 9]
 '''
 
 
-def get_next_element(l):
+def get_element(l):
     index = 0
     while index < len(l[0]):
         for sublist in l:
@@ -14,7 +14,7 @@ def get_next_element(l):
 
 
 def intersperse(l):
-    return [i for i in get_next_element(l)]
+    return [i for i in get_element(l)]
 
 
 if __name__ == '__main__':
